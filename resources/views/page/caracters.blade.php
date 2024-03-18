@@ -1,12 +1,63 @@
 @extends('layouts.layout')
 
-@section('title', 'Benvenuti | caracters')
+@section('title', 'DC Comics | caracters')
 
 @section('content')
 
-    <h1>Sono la pagina di caracters</h1>
+<main>
+    <h2>Index di Pastas</h2>
 
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam consequatur molestias doloremque libero eum sit error
-    corporis dolores possimus incidunt repellat rem sequi est fugit, tempora, provident sint, quia et.</p>
+    <div class="table-responsive">
 
+        <a
+            class="btn btn-primary"
+            href="{{ route('comics.create') }}"
+            >Carica Cimic</a
+        >
+
+
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Src</th>
+                    <th scope="col">Titolo</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Cottura</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Azioni</th>
+                    {{-- <th scope="col">Descrizione</th> --}}
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($comics as $item)
+                    <tr class="">
+                        <td>{{ $item->id}}</td>
+                        <td>{{ $item->image }}</td>
+                        <td>
+                            <a href="{{ route('pastas.show', ['pasta' => $item['id'] ] ) }}">
+                                {{ $item->title }}
+                            </a>
+                        </td>
+                        <td>{{ $item->type }}</td>
+                        <td>{{ $item->cooking_time }}</td>
+                        <td>{{ $item->weight }}</td>
+                        <td>
+                            <button class="btn btn-primary">
+                                edit
+                            </button>
+                            <button class="btn btn-primary">
+                                delete
+                            </button>
+                        </td>
+                        {{-- <td>{{ $item['descrizione'] }}</td> --}}
+                    </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+    </div>
+
+
+</main>
 @endsection

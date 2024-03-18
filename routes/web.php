@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\backend\ComicController;
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
 
-    $cards = config('comics');
+//     $cards = config('comics');
 
-    return view('page.home', compact('cards'));
-});
+//     return view('page.home', compact('cards'));
+// });
+
+Route::get('/', [PageController::class, 'index'])->name('homePage');
 
 
 Route::get('/caracters', function () {
