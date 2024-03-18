@@ -4,9 +4,10 @@
 
 @section('content')
     <main>
-        <h2>Crea un nuovo Comic</h2>
+
 
         <div class="container">
+            <h2>Crea un nuovo Comic</h2>
             <form action="{{ route('comics.store') }}" method="POST">
                 @csrf
 
