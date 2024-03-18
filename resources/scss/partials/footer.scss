@@ -1,0 +1,85 @@
+footer{
+    background-image: url(../img/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .footer-section{
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    div{
+
+      h4{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        padding-block: 10px;
+      }
+      ul{
+        list-style-type: none;
+
+        li{
+          line-height: 160%;
+
+          a{
+            text-decoration: none;
+            color: white;
+            text-transform: capitalize;
+            font-size: 13px;
+            opacity: 50%;
+          }
+
+        }
+      }
+    }
+  }
+
+  .list-container{
+    display: flex;
+    gap: 30px;
+  }
+
+  .sign-up-bar{
+    background-color: #303030;
+    height: 150px;
+    .sign-up-bar-section{
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 150px;
+    }
+  }
+
+  .btn-sign-up{
+    border: 2px solid #0282F9;
+    background: none;
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .logo-list{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .follow{
+      text-decoration: none;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #0282F9;
+      font-weight: bold;
+    }
+  }
