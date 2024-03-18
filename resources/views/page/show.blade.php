@@ -4,6 +4,8 @@
 
 @section('content')
     <main>
+
+
         <h2>{{ $comic->title }}</h2>
 
         <p>

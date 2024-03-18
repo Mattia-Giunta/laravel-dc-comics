@@ -31,4 +31,4 @@ Route::get('/', [PageController::class, 'index'])->name('homePage');
 
 // });
 
-Route::resource('comicss', ComicController::class );
+Route::resource('comics', ComicController::class );

@@ -5,14 +5,14 @@
 @section('content')
 
 <main>
-    <h2>Index di Pastas</h2>
+    <h2>Index di Comics</h2>
 
     <div class="table-responsive">
 
         <a
             class="btn btn-primary"
             href="{{ route('comics.create') }}"
-            >Carica Cimic</a
+            >Carica Comic</a
         >
 
 
@@ -20,12 +20,13 @@
             <thead>
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Src</th>
-                    <th scope="col">Titolo</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Cottura</th>
-                    <th scope="col">Peso</th>
-                    <th scope="col">Azioni</th>
+                    <th scope="col">title</th>
+                    <th scope="col">description</th>
+                    <th scope="col">thumb</th>
+                    <th scope="col">price</th>
+                    <th scope="col">series</th>
+                    <th scope="col">sale_date</th>
+                    <th scope="col">type</th>
                     {{-- <th scope="col">Descrizione</th> --}}
                 </tr>
             </thead>
@@ -33,15 +34,17 @@
                 @foreach ($comics as $item)
                     <tr class="">
                         <td>{{ $item->id}}</td>
-                        <td>{{ $item->image }}</td>
                         <td>
-                            <a href="{{ route('pastas.show', ['pasta' => $item['id'] ] ) }}">
+                            <a href="{{ route('comics.show', ['comic' => $item['id'] ] ) }}">
                                 {{ $item->title }}
                             </a>
                         </td>
+                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->thumb }}</td>
+                        <td>{{ $item->price }}</td>
+                        <td>{{ $item->series }}</td>
+                        <td>{{ $item->sale_date }}</td>
                         <td>{{ $item->type }}</td>
-                        <td>{{ $item->cooking_time }}</td>
-                        <td>{{ $item->weight }}</td>
                         <td>
                             <button class="btn btn-primary">
                                 edit

@@ -9,7 +9,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center gap-4">
 
                 <li class="nav-item">
-                    <a class="nav-link active text-uppercase text-dark fw-medium ms-5" href="/caracters">Caracters</a>
+                    <a class="nav-link active text-uppercase text-dark fw-medium ms-5" href="{{route('comics.index')}}">Caracters</a>
                 </li>
 
                 <li class="nav-item">

@@ -54,6 +54,7 @@ class ComicController extends Controller
      * Display the specified resource.
      */
     public function show(Comic $comic)
+
     {
         return view('page.show', compact('comic'));
     }
