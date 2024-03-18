@@ -31,15 +31,31 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData = $request->all();
+
+
+        $newComic = new Comic();
+        $newComic->fill($formData);
+
+
+        // $newPasta->title = $formData['title'];
+        // $newPasta->description = $formData['description'];
+        // $newPasta->type = $formData['type'];
+        // $newPasta->image = $formData['image'];
+        // $newPasta->cooking_time = $formData['cooking_time'];
+        // $newPasta->weight = $formData['weight'];
+
+        $newComic->save();
+
+        return redirect()->route('comics.show', ['comics' => $newComic->id]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Comic $comic)
     {
-        //
+        return view('page.show', compact('comic'));
     }
 
     /**

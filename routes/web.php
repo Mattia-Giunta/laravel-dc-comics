@@ -25,8 +25,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'index'])->name('homePage');
 
 
-Route::get('/caracters', function () {
+// Route::get('/caracters', function () {
 
-    return view('page.caracters');
+//     return view('page.caracters');
 
-});
+// });
+
+Route::resource('comicss', ComicController::class );

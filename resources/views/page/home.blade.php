@@ -16,7 +16,7 @@
 
         <div class="row row-cols-6">
 
-            @foreach ( $cards as $element )
+            @foreach ( $comics as $element )
                 <div class="col ">
 
                     <img class="comics-cards w-100 mt-5" src="{{ $element['thumb'] }}" alt="">
