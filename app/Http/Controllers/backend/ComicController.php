@@ -74,7 +74,13 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $formData = $request->all();
+
+        $comic = Comic::find($id);
+
+        $comic->update($formData);
+
+        return redirect()->route('comics.index');
     }
 
     /**
