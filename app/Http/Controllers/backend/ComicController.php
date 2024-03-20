@@ -31,20 +31,22 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $formData = $request->all();
 
+        $request->validate([
+            'title'=> 'required',
+            'description'=> 'required',
+            'thumb'=> 'required',
+            'price'=> 'required',
+            'series'=> 'required',
+            'sale_date'=> 'required',
+            'type'=> 'required',
+        ]);
+
+
+        $formData = $request->all();
 
         $newComic = new Comic();
         $newComic->fill($formData);
-
-
-        // $newPasta->title = $formData['title'];
-        // $newPasta->description = $formData['description'];
-        // $newPasta->type = $formData['type'];
-        // $newPasta->image = $formData['image'];
-        // $newPasta->cooking_time = $formData['cooking_time'];
-        // $newPasta->weight = $formData['weight'];
-
         $newComic->save();
 
         return redirect()->route('comics.show', ['comic' => $newComic->id]);
@@ -74,10 +76,20 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        $request->validate([
+            'title'=> 'required',
+            'description'=> 'required',
+            'thumb'=> 'required',
+            'price'=> 'required',
+            'series'=> 'required',
+            'sale_date'=> 'required',
+            'type'=> 'required',
+        ]);
+
         $formData = $request->all();
 
         $comic = Comic::find($id);
-
         $comic->update($formData);
 
         return redirect()->route('comics.index');
